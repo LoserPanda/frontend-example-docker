@@ -22,16 +22,18 @@ Notice, that all the information are not needed in all the exercises.
 
 ## Exercise 1.10 -> to run the project
 
-To build and serve in production mode: `npm start`
-This builds the project to `dist` folder and serves it in port 5000.
 
-You can alternatively build the project with `npm run build` to build the project to `dist` folder and then serve it in any way you want, for example:
+To run the frontend application run the following from the project root:
 
-To use a npm package called serve to serve the project in port 5000:
-- install: `npm install -g serve`
-- serve: `serve -s -l 5000 dist`
+```
+docker build -t frontend-example-docker .
+```
 
-Test that the project is running by going to <http://localhost:5000>
+```
+docker run -p 5000:5000 frontend-example-docker
+```
+
+After running the commands, visit http://localhost:5000 to verify the web application successfully runs on Docker container.
 
 ## Exercise 1.12 -> to connect to backend
 
