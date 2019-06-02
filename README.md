@@ -22,18 +22,18 @@ Notice, that all the information are not needed in all the exercises.
 
 ## Exercise 1.10 -> to run the project
 
-To build and serve in production mode: `npm start`
-This builds the project to `dist` folder and serves it in port 5000.
+To run the frontend application run the following from the project root:
 
-You can alternatively build the project with `npm run build` to build the project to `dist` folder and then serve it in any way you want, for example:
+```
+docker build -t frontend-example-docker .
+```
 
-To use a npm package called serve to serve the project in port 5000:
-- install: `npm install -g serve`
-- serve: `serve -s -l 5000 dist`
+```
+docker run -p 5000:5000 frontend-example-docker
+```
 
-Test that the project is running by going to <http://localhost:5000>
+After running the commands, visit http://localhost:5000 to verify the web application successfully runs on Docker container.
 
 ## Exercise 1.12 -> to connect to backend
 
-By default the expected path to backend is /api. This is where the application will send requests. 
-To manually configure api path run with `API_URL` environment value set, for example `API_URL=http://localhost:8888 npm start` or `API_URL=<url> npm build`
+The *Dockerfile* contains configuration to run the frontend app so that it connects to the backend application possible to find at https://github.com/LoserPanda/backend-example-docker/tree/feature/connect-to-frontend. In order to have the projects working together you need to start both of the apps by using docker.
